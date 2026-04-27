@@ -9,7 +9,7 @@ int main(void)
     printf("Enter the width of the rectangle: ");
     scanf("%d", &width);
     int area = width*length;
-    int perimenter = (width*length)*2;
+    int perimenter = (width+length)*2;
     printf("\nThe area of the rectangle is: %d\nThe perimenter of the rectangle is %d.\n",area,perimenter);
 
  }
