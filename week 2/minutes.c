@@ -5,16 +5,24 @@ int main(void)
     int total_minutes;
     printf("Moving running time:");
     scanf("%d", &total_minutes);
-    int hours = total_minutes / 60;
-    int minutes = total_minutes % 60;
-    printf("Equals:%d h %d min\n",hours,minutes);
-    int start_h ,start_m;
-    printf("Enter start hour:");
-    scanf("%d",&start_h);
-    scanf("%d",&start_m);
-    int end_h = start_h+ hours;
-    int end_m = start_m + minutes;
-    printf("Finish time: %d:%d\n",end_h,end_m );
+
+    int start_h;
+    int start_m;
+    printf("Start time:");
+    scanf("%d:%d",&start_h,&start_m);
+
+     int hours = total_minutes / 60;
+    int min = total_minutes % 60;
+
+    int end_h = start_h+ hours;// end_h = 8
+    int end_m = start_m + min;// end_m = 61
+
+    if (end_m >= 60){
+        end_h = end_h + (end_m / 60);// Update variable value
+        end_m = end_m % 60;
+    }
+    printf("The movie will last :%d hr and %d min\n",hours,min);
+    printf("Finish time: %d:%02d \n",end_h,end_m );
 
 
 
